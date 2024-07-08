@@ -47,6 +47,7 @@ def download_file(file_hash):
         File: Запрашиваемый файл как вложение, или JSON сообщение об
         ошибке, если файл не найден.
     '''
+
     file_path = find_file_by_hash(file_hash)
     if file_path:
         return send_file(file_path, as_attachment=True)
@@ -66,6 +67,7 @@ def delete_file(file_hash):
         JSON: {'message': 'Файл удален'} в случае успешного удаления, или
         JSON сообщение об ошибке, если файл не найден.
     '''
+
     file_path = find_file_by_hash(file_hash)
     if file_path:
         os.remove(file_path)
